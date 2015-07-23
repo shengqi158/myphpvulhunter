@@ -1,0 +1,193 @@
+array(
+    0: Stmt_Class(
+        type: 0
+        name: HttpRpcController
+        extends: Name(
+            parts: array(
+                0: Cavy_Controller_Action
+            )
+        )
+        implements: array(
+        )
+        stmts: array(
+            0: Stmt_Property(
+                type: 1
+                props: array(
+                    0: Stmt_PropertyProperty(
+                        name: models
+                        default: Scalar_String(
+                            value: user,taskIp,httpRpc,auroraConf,auroraLicense
+                        )
+                    )
+                )
+            )
+            1: Stmt_ClassMethod(
+                type: 1
+                byRef: false
+                name: gettemplates
+                params: array(
+                )
+                stmts: array(
+                    0: Expr_Assign(
+                        var: Expr_Variable(
+                            name: isWS
+                        )
+                        expr: Expr_ConstFetch(
+                            name: Name(
+                                parts: array(
+                                    0: false
+                                )
+                            )
+                        )
+                    )
+                    1: Expr_Assign(
+                        var: Expr_Variable(
+                            name: record
+                        )
+                        expr: Expr_MethodCall(
+                            var: Expr_PropertyFetch(
+                                var: Expr_Variable(
+                                    name: this
+                                )
+                                name: User
+                            )
+                            name: findUser
+                            args: array(
+                                0: Arg(
+                                    value: Expr_ArrayDimFetch(
+                                        var: Expr_PropertyFetch(
+                                            var: Expr_Variable(
+                                                name: this
+                                            )
+                                            name: _params
+                                        )
+                                        dim: Scalar_String(
+                                            value: user
+                                        )
+                                    )
+                                    byRef: false
+                                    unpack: false
+                                )
+                            )
+                        )
+                    )
+                    2: Expr_Assign(
+                        var: Expr_Variable(
+                            name: userName
+                        )
+                        expr: Expr_PropertyFetch(
+                            var: Expr_Variable(
+                                name: record
+                            )
+                            name: name
+                        )
+                    )
+                    3: Stmt_If(
+                        cond: Expr_BinaryOp_Equal(
+                            left: Expr_ArrayDimFetch(
+                                var: Expr_PropertyFetch(
+                                    var: Expr_Variable(
+                                        name: this
+                                    )
+                                    name: _params
+                                )
+                                dim: Scalar_String(
+                                    value: class
+                                )
+                            )
+                            right: Scalar_String(
+                                value: wavsm
+                            )
+                        )
+                        stmts: array(
+                            0: Expr_Assign(
+                                var: Expr_Variable(
+                                    name: isWS
+                                )
+                                expr: Expr_ConstFetch(
+                                    name: Name(
+                                        parts: array(
+                                            0: true
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        elseifs: array(
+                        )
+                        else: null
+                    )
+                    4: Expr_Assign(
+                        var: Expr_Variable(
+                            name: ret
+                        )
+                        expr: Expr_MethodCall(
+                            var: Expr_StaticCall(
+                                class: Name(
+                                    parts: array(
+                                        0: Cavy
+                                    )
+                                )
+                                name: getModel
+                                args: array(
+                                    0: Arg(
+                                        value: Scalar_String(
+                                            value: PluginTemplate
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                )
+                            )
+                            name: httpRpcTemplatesInfo
+                            args: array(
+                                0: Arg(
+                                    value: Expr_Variable(
+                                        name: isWS
+                                    )
+                                    byRef: false
+                                    unpack: false
+                                )
+                                1: Arg(
+                                    value: Expr_Variable(
+                                        name: userName
+                                    )
+                                    byRef: false
+                                    unpack: false
+                                )
+                            )
+                        )
+                    )
+                    5: Expr_Assign(
+                        var: Expr_Variable(
+                            name: ret
+                        )
+                        expr: Expr_FuncCall(
+                            name: Name(
+                                parts: array(
+                                    0: stripslashes
+                                )
+                            )
+                            args: array(
+                                0: Arg(
+                                    value: Expr_Variable(
+                                        name: ret
+                                    )
+                                    byRef: false
+                                    unpack: false
+                                )
+                            )
+                        )
+                    )
+                    6: Stmt_Echo(
+                        exprs: array(
+                            0: Expr_Variable(
+                                name: ret
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
