@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: liaoxinxi
  * Date: 2015/7/22
  * Time: 14:54
  */
@@ -18,7 +17,7 @@ ini_set('xdebug.max_nesting_level', 3000);
 $parser = new PhpParser\Parser(new PhpParser\Lexer\Emulative) ;
 $nodeDumper = new PhpParser\NodeDumper();
 $code = "<?php echo 'xx'. hi\\getTarget();";
-$file_name = 'D:\vul_test\2015\rsas-v5-150609\www.modefied\www\app\controllers\HttpRpcController.php';
+$file_name = 'D:\vul_test\2015\r\www.modefied\www\app\controllers\HttpRpcController.php';
 $code = file_get_contents($file_name);
 $json_file_name = 'rpc.json';
 try{
